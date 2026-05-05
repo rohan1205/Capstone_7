@@ -1,3 +1,7 @@
+// Root route for health check or welcome message
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
