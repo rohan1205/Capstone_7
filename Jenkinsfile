@@ -17,9 +17,9 @@ pipeline {
                 dir(env.BACKEND_DIR) {
                     script {
                         if (fileExists('package.json')) {
-                            sh 'npm install'
+                            bat 'npm install'
                             // Uncomment if you have tests
-                            // sh 'npm test'
+                            // bat 'npm test'
                         }
                     }
                 }
@@ -30,10 +30,10 @@ pipeline {
                 dir(env.FRONTEND_DIR) {
                     script {
                         if (fileExists('package.json')) {
-                            sh 'npm install'
+                            bat 'npm install'
                             // Uncomment if you have tests
-                            // sh 'npm test'
-                            sh 'npm run build'
+                            // bat 'npm test'
+                            bat 'npm run build'
                         }
                     }
                 }
@@ -43,9 +43,9 @@ pipeline {
             steps {
                 script {
                     if (fileExists('docker-compose.yml')) {
-                        sh 'docker-compose build'
+                        bat 'docker-compose build'
                         // Uncomment to run containers
-                        // sh 'docker-compose up -d'
+                        // bat 'docker-compose up -d'
                     }
                 }
             }
